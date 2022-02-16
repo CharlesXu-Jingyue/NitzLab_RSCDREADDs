@@ -676,7 +676,7 @@ G_AlternationTurnAny2 = nan(1,length(B_Runs));
 G_AlternationTurn3 = nan(1,length(B_Runs));
 G_AlternationTurnAny3 = nan(1,length(B_Runs));
 
-isRun = find(sum(B_All==[1:NumRoutes],2));
+isRun = find(sum(B_All==(1:NumRoutes),2));
 isReturn = find(sum(B_All==[9,10],2));
 
 G_IsRightTurn_IntOnly = G_IsRightTurn(:,isRun);
@@ -926,7 +926,7 @@ end
 clear thisRun jRun iRun thisTurn* lastTurn* isReturn isRun rightsideIndex leftsideIndex quad1Index quad2Index quad3Index quad4Index
 
 %% Long/Short to or from routes 
-isRun = find(sum(B_All==[1:NumRoutes],2));
+isRun = find(sum(B_All==(1:NumRoutes),2));
 isReturn = (sum(B_All==[9,10],2));
 isReturnFollowingRun = zeros(1,length(isRun));
 isReturnBeforeRun = zeros(1,length(isRun));
