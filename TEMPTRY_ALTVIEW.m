@@ -2,7 +2,7 @@ for REC = 106
     FirstOrderAlt= [];
     SecondOrderAlt = [];
 
-NoAlt = TurnAnalysis.IsRightTurn_IntOnly{REC};
+    NoAlt = TurnAnalysis.IsRightTurn_IntOnly{REC};
 
     for j = 2:size(NoAlt,2)
         for jj = 1:size(NoAlt,1)
@@ -49,7 +49,7 @@ NoAlt = TurnAnalysis.IsRightTurn_IntOnly{REC};
 
 
 
-figure() 
+figure
 subplot(3,1,1)
 imagesc(NoAlt)
 subplot(3,1,2)

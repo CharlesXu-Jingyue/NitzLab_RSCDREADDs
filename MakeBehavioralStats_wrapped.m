@@ -328,7 +328,7 @@ clear spot iBlock
 C_ErrorBlocks =[];
 C_RewardBlocks =[];
 
-GoodBadDecider =0;
+GoodBadDecider = 0;
 ErrorSize = 0;
 RewSize = 0;
 ErrorBoutNum = 1;
