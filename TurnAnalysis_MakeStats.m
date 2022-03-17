@@ -1,4 +1,4 @@
-%% Make stats for turn analysis
+%% Make stats for turn analysis %%
 %
 % Charles Xu @ UCSD, 20220216, adopted from TEMPTRY_ALTVIEW.m by Alex
 % Johnson
@@ -7,13 +7,14 @@
 % into one table
 %
 % Run this script before other TurnAnalysis scripts
-%% Main
+%
+%% Main %%
 clear
 close all
 
 % User input
 nRecToPlot = NaN;
-dirWrappedData = '/Users/alveus/Library/Mobile Documents/com~apple~CloudDocs/Collaborate/KindofBlueLab/RSC_DREADDs/Code/TTTWrapper/Dec2021_Compilation.mat'; % Specify full path to the data file, including file name
+dirWrappedData = '/Users/alveus/Library/Mobile Documents/com~apple~CloudDocs/Collaborate/KindofBlueLab/RSC_DREADDs/Results/TurnAnalysis/Data/Dec2021_Compilation.mat'; % Specify full path to the data file, including file name
 
 % Initialization
 load(dirWrappedData)
@@ -102,5 +103,5 @@ summaryStats{1,3} = grpstats(summaryTable,4,{'mean','std'},'DataVars',5:size(sum
 summaryStats{1,4} = grpstats(summaryTable,2:4,{'mean','std'},'DataVars',5:size(summaryTable,2));
 
 % Save descriptive statistics
-% save('SummaryTable.mat','summaryTable')
-% save('SummaryStatistics.mat','summaryStats')
+% save(fullfile(dirWrappedData(1:(end-length('Dec2021_Compilation.mat'))),'SummaryTable.mat'),'summaryTable')
+% save(fullfile(dirWrappedData(1:(end-length('Dec2021_Compilation.mat'))),'SummaryStatistics.mat'),'summaryStats')

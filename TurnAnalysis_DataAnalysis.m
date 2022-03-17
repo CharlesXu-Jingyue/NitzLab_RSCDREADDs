@@ -1,4 +1,4 @@
-%% Make plots for turn analysis
+%% Make plots for turn analysis %%
 %
 % Charles Xu @ UCSD, 20220216, adopted from TEMPTRY_ALTVIEW.m by Alex
 % Johnson
@@ -7,10 +7,9 @@
 %
 % Run TurnAnalysis_MakeStats.m before running this code
 %
-%% Main
+%% Main %%
 
 isOutlier = summaryTable;
-summaryStatsAllFactors = table2array(summaryStats{1,4});
 
 for n = 5:size(isOutlier,2)
     for m = 1:size(isOutlier,1)
@@ -29,4 +28,14 @@ for n = 5:size(isOutlier,2)
 end
 
 % Save processed data
-save('OutlierRecordings.mat','isOutlier')
+% save(fullfile(dirWrappedData(1:(end-length('OutlierRecordings.mat'))),'isOutlier')
+
+nAboveFirstAt1 = 0;
+nBelowFirstAt1 = 0;
+for i = 1:size(isOutlier,1)
+	if table2array(isOutlier(i,5)) == 1
+        nAboveFirstAt1 = nAboveFirstAt1+ 1;
+    elseif table2array(isOutlier(i,5)) == -1
+        nBelowFirstAt1 = nBelowFirstAt1+ 1;
+    end
+end

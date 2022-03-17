@@ -1,4 +1,4 @@
-%% Make plots for turn analysis
+%% Make plots for turn analysis %%
 %
 % Charles Xu @ UCSD, 20220221
 %
@@ -7,7 +7,7 @@
 %
 % Run TurnAnalysis_MakeStats.m before running this code
 %
-%% Main
+%% Main %%
 
 %% Make summary figure
 figure
@@ -212,3 +212,9 @@ title({'Second Order Alternation','on 8 Paths by','Rotation Condition','at Turns
 xticklabels({'Turn 1','Turn 2'})
 lg8 = legend({'NOR','ROT'});
 lg8.Location = 'northeastoutside';
+
+%% Make histogram for distribution of probabilities
+% figure
+% set(gcf,'Position',[10 10 1000 1000])
+% 
+
