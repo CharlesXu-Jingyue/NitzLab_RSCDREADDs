@@ -157,7 +157,7 @@ hAxes = axes('Units','Pixels','Position',[axesXLoc,axesYLoc,xAxisRange,yAxisRang
 dvtFileName = fullfile(pathname, filename);
 % !!!!!! NOTE !!!!!!! Put in error catch in case they hit cancel here.
 % Load dvt file contents.
-load(dvtFileName);
+indRecStruct = load(dvtFileName).indRecStruct;
 
 % Initialize variables - many are used in local and nested functions.    
 if isfield(indRecStruct, 'events')
@@ -1126,13 +1126,14 @@ set(overallWindow,'Visible','on');
         end
         
         % Plots the labeled portions in the correct colors.
-        for iSegment = 1:length(changeStarts);
+        for iSegment = 1:length(changeStarts)
             plot(pixelDvt(firstPoint+changeStarts(iSegment):firstPoint+changeEnds(iSegment),xLightCol),...
                 pixelDvt(firstPoint+changeStarts(iSegment):firstPoint+changeEnds(iSegment),yLightCol),'.',...
                 'Color',pen(abs(pixelDvt(firstPoint+changeStarts(iSegment),end)),:));
         end
         
         % Plot reward locations.
+        events = indRecStruct.events;
         rewardLocations = find(events(:,end) == 777); % Reward spots
         onScreenRewardLocs = (firstPoint<= events(rewardLocations,1)) &...
             (events(rewardLocations,1) <= lastPoint);
@@ -1216,5 +1217,4 @@ set(overallWindow,'Visible','on');
                 end
         end
     end
-
 end
