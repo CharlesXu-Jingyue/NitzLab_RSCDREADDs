@@ -29,7 +29,7 @@ workingDVT = rawDVT;
 
 % So we can use the tracked pixel values as indices later on in analyses,
 % we add one. To encode the location of the light in the DVT files, Plexon
-% uses values from a range of 1-1024? w/ 0 values indicating lost tracking.
+% uses values rom a range of 1-1024? w/ 0 values indicating lost tracking.
 % This converts from the encoding form 1024x1024 to native pixels of camera
 % 640x480, then adds 1 to the value so values are 1-640 instead of 0-639.
 workingDVT(:,3:end) = workingDVT(:,3:end)*639/1023 +1;
