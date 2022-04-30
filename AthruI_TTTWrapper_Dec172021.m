@@ -1,8 +1,8 @@
 %% Wrapper for tripleT data
 
-data_dir = 'C:\Users\Aurif\Documents\Work\AJ_SP_RSCINACTIVATION\AllData';
-current_dir = cd(data_dir);
-file_info = dir('*Events*');
+% data_dir = 'C:\Users\Aurif\Documents\Work\AJ_SP_RSCINACTIVATION\AllData';
+% current_dir = cd(data_dir);
+file_info = dir('*_Events*');
 file_list = char({file_info.name});
 RecNum = str2num(file_list(:,4:5));
 RatNum = (file_list(:,7:9));
@@ -57,7 +57,5 @@ for filenum = 1:size(file_list,1)                                          %For 
     
     filenum;
 end
-
-
 
 
