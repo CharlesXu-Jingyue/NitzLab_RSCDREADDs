@@ -1,0 +1,34 @@
+%% RSC Inactivation Exploratory Data Analysis - Data Processing & Figure
+%{
+This code is used to process data into figures
+Charles Xu & Sagar 20220504
+%}
+
+%% Initialize
+% Load CompiledDataTable
+
+% Separate data by condition
+CompiledDataTableCond_CTR = CompiledDataTable(CompiledDataTable{:,'Cond'} == "CTR",:);
+CompiledDataTableCond_SAL = CompiledDataTable(CompiledDataTable{:,'Cond'} == "SAL",:);
+CompiledDataTableCond_CNO = CompiledDataTable(CompiledDataTable{:,'Cond'} == "CNO",:);
+
+% Separate data by rotation
+CompiledDataTableRot_NOR = CompiledDataTable(CompiledDataTable{:,'Rot'} == "NOR",:);
+CompiledDataTableRot_ROT = CompiledDataTable(CompiledDataTable{:,'Rot'} == "ROT",:);
+
+%% Distribution of error runs by condition
+% Count the number of each error for each condition
+% Data: 'ErrorRoute'
+
+
+
+%% Distribution of runs
+% Count the number of each run to determine biases
+
+%% Mean errors
+% Grouped barplot for mean errors by condition and rotation
+
+%% Mean error per block
+% Grouped barplot for mean errors per block by condition and rotation
+
+%% 
