@@ -190,3 +190,6 @@ hold on
 %% One-way ANOVA by condition
 
 
+%%
+
+p_kw = kruskalwallis(cell2mat(CompiledDataTable.PAlt1), CompiledDataTable.Cond);
