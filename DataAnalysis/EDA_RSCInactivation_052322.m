@@ -5,14 +5,14 @@
 
 %% Load AthruI data for each rat
 
-dataDir = 'C:\Users\NitzLab\Desktop\WrappedData';
+dataDir = '/Users/alveus/Documents/WorkingDirectory/LocalRepository/NitzLab_RSCDREADDs/DataAnalysis/WrappedData';
 cd(dataDir)
-ratList = ["SP9"]; % Change this to include all the rats to be analyzed
+ratList = ["SP10"]; % Change this to include all the rats to be analyzed
 pathNum = 8; % Either 4 or 8
 data = cell(1,length(ratList));
 
 for n = 1:length(ratList)
-    cd(strcat(ratList(n) + "\" + pathNum + "Paths"))
+    cd(strcat(ratList(n) + "/" + pathNum + "Paths"))
     load(dir("*AThruI*").name)
 
     % Read into compiled data
